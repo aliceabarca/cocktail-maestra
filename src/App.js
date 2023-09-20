@@ -1,16 +1,16 @@
 import './App.css';
-import { fetchDrinksById } from './api';
+import { fetchDrinksById, fetchDrinks } from './api';
 import { useState, useEffect } from 'react';
 // import SearchDrink from './components/SearchDrink/SearchDrink';
 import HomeView from './components/HomeView/HomeView';
 
 function App() {
   const [drinks, setDrink] = useState([])
-  const [search, setSearch] = useState('')
 
   useEffect(() => {
-    fetchDrinksById()
+    fetchDrinks()
     .then(data => {
+      console.log(data)
       setDrink(data)
     })
     .catch(error => {
@@ -21,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <HomeView />
     </div>
   );

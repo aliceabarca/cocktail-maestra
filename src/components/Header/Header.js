@@ -8,7 +8,8 @@ const Header = () => {
         <img className='cocktail-img' src={cocktail} alt='cocktail image' />
       </div>
       <div className='title'>
-        <h1>Cocktail Maestra</h1>
+        <h1>COCKTAIL MAESTRA</h1>
+        <hr />
       </div>
     </header>
   )

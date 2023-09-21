@@ -4,8 +4,8 @@ const DisplayDrinks = (props) => {
   const mapDrinks = props.drinks.drinks.map(drink => {
     return (
       <div className='display-drinks' key={drink.idDrink}>
-        <p>{drink.strDrink}</p>
-        <img src={drink.strDrinkThumb}></img>
+        <p className='drink-name'>{drink.strDrink}</p>
+        <img className='drink-image' src={drink.strDrinkThumb} alt='drink-images'></img>
       </div>
     );
   })

@@ -1,28 +1,30 @@
 import './App.css';
 import { fetchDrinksById, fetchDrinks } from './api';
 import { useState, useEffect } from 'react';
-// import SearchDrink from './components/SearchDrink/SearchDrink';
+import DisplayDrinks from './components/DisplayDrinks/DisplayDrinks';
 import HomeView from './components/HomeView/HomeView';
 
 function App() {
-  const [drinks, setDrink] = useState([])
+  const [drinks, setDrinks] = useState([])
+  const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
-    fetchDrinks()
-    .then(data => {
-      console.log(data)
-      setDrink(data)
-    })
-    .catch(error => {
-      console.log(`Request failed - ${error.message}`)
+
+  const fetchAlcohol = (search) => {
+    return fetchDrinks(search)
+      .then((data) => {
+        setDrinks(data)
+        setLoaded(true)
       })
-  }, [])
-
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="App">
       
-      <HomeView />
+      <HomeView fetchAlcohol={fetchAlcohol}/>
+      {loaded ? <DisplayDrinks drinks={drinks} /> : null}
     </div>
   );
 }

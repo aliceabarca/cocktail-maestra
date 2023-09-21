@@ -21,7 +21,7 @@ const SearchDrink = ({ fetchAlcohol }) => {
         <option value="Beer">Beer</option>
         <option value="Wine">Wine</option>
       </select>
-      <button onClick={() => fetchAlcohol(search)}>Fetch Drinks</button>
+      <button className='search-btn' onClick={() => fetchAlcohol(search)}>🔍</button>
     </section>
   )
 }

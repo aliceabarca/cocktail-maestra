@@ -8,6 +8,7 @@
   position: relative;
   left:35%;
   top:200px;
+  justify-content: center;
 }
 
 .search input{
@@ -20,7 +21,7 @@
  
 }
 .button-src{
-  padding: 10px 60px; 
+  padding: 1rem; 
   display: inline-block;
   cursor: pointer;
   border-radius: 50px;
@@ -32,7 +33,13 @@
 }
 
 p {
-  padding-left: 2.7rem;
   padding-right: 1rem;
 }
 
+.search-btn {
+  height: 3rem;
+  margin-top: 0.7rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+  border-radius: 20%;
+}

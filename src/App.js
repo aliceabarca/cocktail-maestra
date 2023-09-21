@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { fetchDrinksById, fetchDrinks } from './api';
+import { useState, useEffect } from 'react';
+import DisplayDrinks from './components/DisplayDrinks/DisplayDrinks';
+import HomeView from './components/HomeView/HomeView';
 
 function App() {
+  const [drinks, setDrinks] = useState([])
+  const [loaded, setLoaded] = useState(false);
+
+
+  const fetchAlcohol = (search) => {
+    return fetchDrinks(search)
+      .then((data) => {
+        setDrinks(data)
+        setLoaded(true)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <HomeView fetchAlcohol={fetchAlcohol}/>
+      {loaded ? <DisplayDrinks drinks={drinks} /> : null}
     </div>
   );
 }

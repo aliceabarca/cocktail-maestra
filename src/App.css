@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,12 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+* {
+  background-color: #343D40;
+  /* font-family: 'Aboreto', cursive; */
+  /* font-family: 'Cinzel Decorative', cursive; */
+  /* font-family: 'Poppins', sans-serif; */
+
 }

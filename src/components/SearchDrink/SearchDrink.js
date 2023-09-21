@@ -2,26 +2,12 @@ import './SearchDrink.css'
 import { useState } from 'react'
 import { fetchDrinks } from '../../api'
 
-const SearchDrink = () => {
-  const [search, setSearch] = useState('')
-
-  const handleSearch = (e) => {
-    setSearch(e.target.value)
-  }
-
-  const fetchAlcohol = () => {
-    fetchDrinks(search)
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+const SearchDrink = ({ fetchAlcohol }) => {
+  const [search, setSearch] = useState(null)
 
   return (
     <section className='search'>
-      <select className='button-src' value={search} onChange={handleSearch}>
+      <select className='button-src' onChange={event => setSearch(event.target.value)}>
         <option value={null}>Taste Something New...</option>
         <option value="Whiskey">Whiskey</option>
         <option value="Brandy">Brandy</option>
@@ -35,7 +21,7 @@ const SearchDrink = () => {
         <option value="Beer">Beer</option>
         <option value="Wine">Wine</option>
       </select>
-      <button onClick={fetchAlcohol}>Fetch Drinks</button>
+      <button onClick={() => fetchAlcohol(search)}>Fetch Drinks</button>
     </section>
   )
 }

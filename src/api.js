@@ -3,9 +3,8 @@ const fetchDrinksById = () => {
   .then(response => {
     if(response.ok) {
       return response.json()
-    // } else {
-    //   throw new Error('Unable to retrieve contacts from server.')
-    // }
+    } else {
+      throw new Error('Unable to retrieve contacts from server.')
     }
   })
 }
@@ -14,7 +13,7 @@ const fetchDrinks = (alcoholType) => {
   return fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${alcoholType}`)
   .then(response => {
     if(response.ok) {
-      return response
+      return response.json()
     } else {
       throw new Error('Unable to retrieve contacts from server.')
     }
@@ -22,5 +21,3 @@ const fetchDrinks = (alcoholType) => {
 }
 
 export { fetchDrinks, fetchDrinksById }
-// log on be able to choose what type of alcohol , serch by alcohol
-// then look for id.

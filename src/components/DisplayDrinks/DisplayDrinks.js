@@ -25,3 +25,4 @@ const DisplayDrinks = (props) => {
 };
 
 export default DisplayDrinks;
+

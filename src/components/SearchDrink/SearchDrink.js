@@ -4,7 +4,7 @@ import { fetchDrinks } from '../../api'
 
 const SearchDrink = ({ fetchAlcohol }) => {
   const [search, setSearch] = useState(null)
-
+  
   return (
     <section className='search'>
       <select className='button-src' onChange={event => setSearch(event.target.value)}>

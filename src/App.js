@@ -24,7 +24,6 @@ const App = () => {
     setFavorites(filterDrinks)
   }
 
-
   const fetchAlcohol = (search) => {
     return fetchDrinks(search)
       .then((data) => {

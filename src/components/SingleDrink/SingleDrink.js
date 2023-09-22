@@ -1,11 +1,12 @@
 import './SingleDrink.css'
 import { useState, useEffect } from 'react';
-import { fetchDrinks, fetchDrinksById } from '../../api';
+import { fetchDrinksById } from '../../api';
 import { Link, useParams } from 'react-router-dom';
 import rewindButton from '../../images/rewind-button (1).png'
+import addFavorites from '../../images/add-to-favorites.png'
 
 
-const SingleDrink = ({ }) => {
+const SingleDrink = ({ addFavoriteDrinks }) => {
   const [selectedDrink, setSelectedDrink] = useState({});
   const [loaded, setLoaded] = useState(false);
 
@@ -25,6 +26,12 @@ const SingleDrink = ({ }) => {
   
     fetchData();
   }, [drinkId]);
+  
+    const newDrink = {
+      id: Date.now(),
+      strDrink: selectedDrink.strDrink,
+      strDrinkThumb: selectedDrink.strDrinkThumb
+    }
 
       return loaded && (
         <div className='drink-conatiner'>
@@ -68,6 +75,9 @@ const SingleDrink = ({ }) => {
         </div>
         <Link to={`/`}>
           <img className='back-button' alt='back button' src={rewindButton}></img>
+        </Link>
+        <Link to={`/favorites`}>
+          <img className='favorite-button' alt='favorite button' src={addFavorites} onClick={() => addFavoriteDrinks(newDrink)}></img>
         </Link>
       </div>
     )

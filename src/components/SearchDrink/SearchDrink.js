@@ -1,6 +1,5 @@
 import './SearchDrink.css'
 import { useState } from 'react'
-import { fetchDrinks } from '../../api'
 
 const SearchDrink = ({ fetchAlcohol }) => {
   const [search, setSearch] = useState(null)

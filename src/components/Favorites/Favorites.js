@@ -1,5 +1,5 @@
 import './Favorites.css'
-
+import PropTypes from 'prop-types'
 const Favorites = ({name, image, deleteFavorite, id}) => {
 
   return (
@@ -11,3 +11,9 @@ const Favorites = ({name, image, deleteFavorite, id}) => {
 }
 
 export default Favorites;
+
+Favorites.propTypes = {
+  name: PropTypes.string.isRequired,
+  deleteFavorite: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired
+}

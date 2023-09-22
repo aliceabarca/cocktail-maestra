@@ -4,12 +4,11 @@ import { fetchDrinksById } from '../../api';
 import { Link, useParams } from 'react-router-dom';
 import rewindButton from '../../images/rewind-button (1).png'
 import addFavorites from '../../images/add-to-favorites.png'
-
+import PropTypes from 'prop-types'
 
 const SingleDrink = ({ addFavoriteDrinks }) => {
   const [selectedDrink, setSelectedDrink] = useState({});
   const [loaded, setLoaded] = useState(false);
-
   const {drinkId} = useParams()
 
   useEffect(() => {
@@ -18,7 +17,6 @@ const SingleDrink = ({ addFavoriteDrinks }) => {
         const data = await fetchDrinksById(drinkId);
         setSelectedDrink(prevSelectedDrink => data.drinks[0]);
         setLoaded(true);
-        console.log('hello', data.drinks);
       } catch (error) {
         console.log(error);
       }
@@ -36,7 +34,6 @@ const SingleDrink = ({ addFavoriteDrinks }) => {
       return loaded && (
         <div className='drink-conatiner'>
           <div>
-        <p>hello</p>
           {selectedDrink.strDrink}
           {selectedDrink.strGlass}
           {selectedDrink.strInstructions}
@@ -84,3 +81,7 @@ const SingleDrink = ({ addFavoriteDrinks }) => {
 }
 
 export default SingleDrink;
+
+SingleDrink.propTypes = {
+  addFavoriteDrinks: PropTypes.func.isRequired
+}

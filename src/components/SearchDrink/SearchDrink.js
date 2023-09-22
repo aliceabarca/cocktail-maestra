@@ -1,9 +1,10 @@
 import './SearchDrink.css'
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 const SearchDrink = ({ fetchAlcohol }) => {
   const [search, setSearch] = useState(null)
-  
+
   return (
     <section className='search'>
       <select className='button-src' onChange={event => setSearch(event.target.value)}>
@@ -26,3 +27,7 @@ const SearchDrink = ({ fetchAlcohol }) => {
 }
 
 export default SearchDrink;
+
+SearchDrink.propTypes = {
+  fetchAlcohol: PropTypes.func.isRequired
+}

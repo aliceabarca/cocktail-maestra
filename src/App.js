@@ -4,11 +4,25 @@ import { useState, useEffect } from 'react';
 import HomeView from './components/HomeView/HomeView';
 import SingleDrink from './components/SingleDrink/SingleDrink';
 import { Routes, Route } from 'react-router';
+import FavoriteContainer from './components/Favorites/FavoriteContainer/FavoriteContainer';
+import Header from './components/Header/Header';
 
-function App() {
+const App = () => {
   const [drinks, setDrinks] = useState([])
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState('')
+  const [favorites, setFavorites] = useState([])
+
+  const addFavoriteDrinks = (newFavorite) => {
+    setFavorites([...favorites, newFavorite])
+  }
+
+  const deleteFavorite = (id) => {
+    const filterDrinks = favorites.filter(favorite => {
+      return favorite.id !== id
+    })
+    setFavorites(filterDrinks)
+  }
 
 
   const fetchAlcohol = (search) => {
@@ -24,9 +38,11 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Routes>
-     <Route path='/' element={<HomeView fetchAlcohol={fetchAlcohol} drinks={drinks}/>} />
-      <Route path='drink/:drinkId' element={<SingleDrink />} />
+        <Route path='/' element={<HomeView fetchAlcohol={fetchAlcohol} drinks={drinks} addFavoriteDrinks={addFavoriteDrinks}/>} />
+        <Route path='drink/:drinkId' element={<SingleDrink addFavoriteDrinks={addFavoriteDrinks} />} />
+        <Route path='/favorites' element={<FavoriteContainer favorites={favorites} deleteFavorite={deleteFavorite}/>} />
       </Routes>
     </div>
   );

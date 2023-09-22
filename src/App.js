@@ -1,12 +1,14 @@
 import './App.css';
 import { fetchDrinksById, fetchDrinks } from './api';
 import { useState, useEffect } from 'react';
-import DisplayDrinks from './components/DisplayDrinks/DisplayDrinks';
 import HomeView from './components/HomeView/HomeView';
+import SingleDrink from './components/SingleDrink/SingleDrink';
+import { Routes, Route } from 'react-router';
 
 function App() {
   const [drinks, setDrinks] = useState([])
   const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState('')
 
 
   const fetchAlcohol = (search) => {
@@ -16,15 +18,16 @@ function App() {
         setLoaded(true)
       })
       .catch((error) => {
-        console.log(error);
+        setError(`Request failed - ${error.message}`)
       });
   };
 
   return (
     <div className="App">
-      
-      <HomeView fetchAlcohol={fetchAlcohol}/>
-      {loaded ? <DisplayDrinks drinks={drinks} /> : null}
+      <Routes>
+     <Route path='/' element={<HomeView fetchAlcohol={fetchAlcohol} drinks={drinks}/>} />
+      <Route path='drink/:drinkId' element={<SingleDrink />} />
+      </Routes>
     </div>
   );
 }

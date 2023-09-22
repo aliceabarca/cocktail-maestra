@@ -1,10 +1,10 @@
 import './App.css';
-import { fetchDrinksById, fetchDrinks } from './api';
-import { useState, useEffect } from 'react';
+import { fetchDrinks } from './api';
+import { useState } from 'react';
 import HomeView from './components/HomeView/HomeView';
 import SingleDrink from './components/SingleDrink/SingleDrink';
 import { Routes, Route } from 'react-router';
-import FavoriteContainer from './components/Favorites/FavoriteContainer/FavoriteContainer';
+import FavoriteContainer from './components/FavoriteContainer/FavoriteContainer';
 import Header from './components/Header/Header';
 
 const App = () => {

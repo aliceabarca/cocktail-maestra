@@ -1,10 +1,10 @@
-const fetchDrinksById = () => {
-  return fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007')
+const fetchDrinksById = (drinkId) => {
+  return fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
   .then(response => {
     if(response.ok) {
       return response.json()
     } else {
-      throw new Error('Unable to retrieve contacts from server.')
+      throw new Error('Unable to retrieve drinks from server.')
     }
   })
 }
@@ -15,7 +15,7 @@ const fetchDrinks = (alcoholType) => {
     if(response.ok) {
       return response.json()
     } else {
-      throw new Error('Unable to retrieve contacts from server.')
+      throw new Error('Unable to retrieve drinks from server.')
     }
   })
 }

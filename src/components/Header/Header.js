@@ -3,6 +3,7 @@ import cocktail from '../../images/cocktail.png'
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+  
   return (
     <header className='header'>
       <div className='header-section'>
@@ -11,7 +12,7 @@ const Header = () => {
       <div className='title'>
         <h1>COCKTAIL MAESTRA</h1>
         <NavLink to={`/`}>
-          <button className='casa-button'>CASA</button>
+          <button className='casa-button'>HOME</button>
         </NavLink>
         <NavLink to={`/favorites`}>
           <button className='saved-drinks'>SAVED DRINKS</button>

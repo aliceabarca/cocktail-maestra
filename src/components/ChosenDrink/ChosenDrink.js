@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './ChosenDrink.css'
+import PropTypes from'prop-types'
 
 const ChosenDrink = (props) => {
 
@@ -12,3 +13,9 @@ const ChosenDrink = (props) => {
 }
 
 export default ChosenDrink;
+
+ChosenDrink.propTypes = {
+  strDrinkThumb: PropTypes.string.isRequired,
+  strDrink: PropTypes.string.isRequired,
+  drinkId: PropTypes.number.isRequired
+}

@@ -8,7 +8,7 @@ import FavoriteContainer from './components/FavoriteContainer/FavoriteContainer'
 import Header from './components/Header/Header';
 
 const App = () => {
-  const [drinks, setDrinks] = useState([])
+  const [drinks, setDrinks] = useState({})
   const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState('')
   const [favorites, setFavorites] = useState([])

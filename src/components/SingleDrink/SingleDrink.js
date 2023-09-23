@@ -2,21 +2,30 @@ import './SingleDrink.css'
 import { useState, useEffect } from 'react';
 import { fetchDrinksById } from '../../api';
 import { Link, useParams } from 'react-router-dom';
-import rewindButton from '../../images/rewind-button (1).png'
 import addFavorites from '../../images/add-to-favorites.png'
 import PropTypes from 'prop-types'
 
-const SingleDrink = ({ addFavoriteDrinks }) => {
-  const [selectedDrink, setSelectedDrink] = useState({});
+const SingleDrink = ({ setSelectedDrink, selectedDrink, setFavorites, favorites }) => {
   const [loaded, setLoaded] = useState(false);
   const {drinkId} = useParams()
+
+  const addFavoriteDrinks = (newFavorite) => {
+    const isDuplicate = favorites.find((favorite) => favorite.id === newFavorite.id);
+
+    if (!isDuplicate) {
+      setFavorites([...favorites, newFavorite]);
+    }
+  }
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fetchDrinksById(drinkId);
-        setSelectedDrink(prevSelectedDrink => data.drinks[0]);
-        setLoaded(true);
+        if (data.drinks && data.drinks.length > 0) {
+          setSelectedDrink(data.drinks[0]);
+          setLoaded(true);
+        } else {
+        }
       } catch (error) {
         console.log(error);
       }
@@ -24,12 +33,6 @@ const SingleDrink = ({ addFavoriteDrinks }) => {
   
     fetchData();
   }, [drinkId]);
-  
-    const newDrink = {
-      id: Date.now(),
-      strDrink: selectedDrink.strDrink,
-      strDrinkThumb: selectedDrink.strDrinkThumb
-    }
 
       return loaded && (
         <div className='drink-conatiner'>
@@ -71,7 +74,7 @@ const SingleDrink = ({ addFavoriteDrinks }) => {
           {selectedDrink.strMeasure15}
         </div>
         <Link to={`/favorites`}>
-          <img className='favorite-button' alt='favorite button' src={addFavorites} onClick={() => addFavoriteDrinks(newDrink)}></img>
+          <img className='favorite-button' alt='favorite button' src={addFavorites} onClick={() => addFavoriteDrinks(selectedDrink)}></img>
         </Link>
       </div>
     )
@@ -80,5 +83,7 @@ const SingleDrink = ({ addFavoriteDrinks }) => {
 export default SingleDrink;
 
 SingleDrink.propTypes = {
-  addFavoriteDrinks: PropTypes.func.isRequired
+  setSelectedDrink: PropTypes.func.isRequired,
+  selectedDrink: PropTypes.object.isRequired,
+  setFavorites: PropTypes.func.isRequired,
 }

@@ -31,4 +31,8 @@ describe('home page user flow', () => {
       .get('.delete-button').click()
       .get('.favorites').should('have.length', 0)
   })
+  it('should be able to click back home', () => {
+    cy.get('.casa-button').click()
+      .url().should('contain', '/')
+  })
 })

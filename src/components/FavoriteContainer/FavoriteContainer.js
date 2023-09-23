@@ -1,19 +1,20 @@
 import Favorites from '../Favorites/Favorites'
 import PropTypes from 'prop-types'
 
-const FavoriteContainer = ({favorites, deleteFavorite}) => {
-
+const FavoriteContainer = ({ favorites, deleteFavorite }) => {
   const favoriteCards = favorites.map(favorite => {
+
     return (
       <Favorites 
         name={favorite.strDrink}
         image={favorite.strDrinkThumb}
         deleteFavorite={deleteFavorite}
-        id={favorite.id}
-        key={favorite.id}
+        idDrink={favorite.idDrink}
+        key={favorite.idDrink}
       />
     )
   })
+  
   return (
     <div className="favorite-container">
       {favoriteCards}
@@ -24,6 +25,6 @@ const FavoriteContainer = ({favorites, deleteFavorite}) => {
 export default FavoriteContainer;
 
 FavoriteContainer.propTypes = {
-  favorites: PropTypes.array.isRequired,
-  deleteFavorite: PropTypes.func.isRequired
+  deleteFavorite: PropTypes.func.isRequired,
+  favorites: PropTypes.array.isRequired
 }

@@ -6,6 +6,7 @@ import SingleDrink from './components/SingleDrink/SingleDrink';
 import { Routes, Route } from 'react-router';
 import FavoriteContainer from './components/FavoriteContainer/FavoriteContainer';
 import Header from './components/Header/Header';
+import Error from './components/Error/Error';
 
 const App = () => {
   const [drinks, setDrinks] = useState({})
@@ -42,7 +43,9 @@ const App = () => {
         <Route path='/' element={<HomeView fetchAlcohol={fetchAlcohol} drinks={drinks} addFavoriteDrinks={addFavoriteDrinks}/>} />
         <Route path='drink/:drinkId' element={<SingleDrink addFavoriteDrinks={addFavoriteDrinks} />} />
         <Route path='/favorites' element={<FavoriteContainer favorites={favorites} deleteFavorite={deleteFavorite}/>} />
+        <Route path='*' element={<Error error={error}/>}/>
       </Routes>
+      {error && <Error error={error} />}
     </div>
   );
 }

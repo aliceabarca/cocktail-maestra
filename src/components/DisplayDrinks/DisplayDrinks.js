@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
 const DisplayDrinks = (props) => {
-
   if (!props.drinks.drinks) {
     return null;
   }

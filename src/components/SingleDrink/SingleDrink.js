@@ -70,9 +70,6 @@ const SingleDrink = ({ addFavoriteDrinks }) => {
           {selectedDrink.strMeasure14}
           {selectedDrink.strMeasure15}
         </div>
-        <Link to={`/`}>
-          <img className='back-button' alt='back button' src={rewindButton}></img>
-        </Link>
         <Link to={`/favorites`}>
           <img className='favorite-button' alt='favorite button' src={addFavorites} onClick={() => addFavoriteDrinks(newDrink)}></img>
         </Link>

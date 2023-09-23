@@ -17,6 +17,6 @@ export default HomeView;
 
 HomeView.propTypes = {
   fetchAlcohol: PropTypes.func.isRequired,
-  drinks: PropTypes.array.isRequired,
+  drinks: PropTypes.object.isRequired,
   addFavoriteDrinks: PropTypes.func.isRequired
 }

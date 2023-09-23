@@ -11,10 +11,10 @@ const Header = () => {
       <div className='title'>
         <h1>COCKTAIL MAESTRA</h1>
         <NavLink to={`/`}>
-          <button>CASA</button>
+          <button className='casa-button'>CASA</button>
         </NavLink>
         <NavLink to={`/favorites`}>
-          <button>SAVED DRINKS</button>
+          <button className='saved-drinks'>SAVED DRINKS</button>
         </NavLink>
         <hr />
       </div>

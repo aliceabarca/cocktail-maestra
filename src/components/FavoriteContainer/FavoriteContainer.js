@@ -2,7 +2,7 @@ import Favorites from '../Favorites/Favorites'
 import PropTypes from 'prop-types'
 
 const FavoriteContainer = ({favorites, deleteFavorite}) => {
-  console.log(typeof favorites)
+
   const favoriteCards = favorites.map(favorite => {
     return (
       <Favorites 

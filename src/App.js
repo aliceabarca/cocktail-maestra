@@ -15,11 +15,8 @@ const App = () => {
   const [favorites, setFavorites] = useState([])
   const [selectedDrink, setSelectedDrink] = useState({});
 
-  const deleteFavorite = (id) => {
-    const filterDrinks = favorites.filter(favorite => {
-      console.log(id)
-      return favorite.id !== id
-    })
+  const deleteFavorite = (idDrink) => {
+    const filterDrinks = favorites.filter(favorite => favorite.idDrink !== idDrink)
     setFavorites(filterDrinks)
   }
 
@@ -39,7 +36,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path='/' element={<HomeView fetchAlcohol={fetchAlcohol} drinks={drinks} />} />
-        <Route path='/drink/:drinkId' element={<SingleDrink setFavorites={setFavorites} favorites={favorites} setSelectedDrink={setSelectedDrink} selectedDrink={selectedDrink}/>} />
+        <Route path='/drink/:drinkId' element={<SingleDrink setFavorites={setFavorites} favorites={favorites} setSelectedDrink={setSelectedDrink} selectedDrink={selectedDrink} setError={setError}/>} />
         <Route path='/favorites' element={<FavoriteContainer favorites={favorites} deleteFavorite={deleteFavorite} selectedDrink={selectedDrink}/>} />
         <Route path='*' element={<Error error={error}/>}/>
       </Routes>

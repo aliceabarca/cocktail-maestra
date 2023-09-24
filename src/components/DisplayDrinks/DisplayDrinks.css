@@ -4,7 +4,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   padding-top: 20rem;
-  padding-left: 15rem;
+  padding-left: 7.8rem;
 }
 
 img {
@@ -41,4 +41,92 @@ p:after {
   width: 95%;
   max-width: 255px;
   background-color: #eedddd;
+}
+
+@media screen and (max-width: 617px){
+  .drinks-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding-top: 20rem;
+  }
+  img {
+    height: 5rem;
+    border-radius: 20%;
+  }
+}
+
+@media screen and (max-width: 1070px){
+  img {
+    height: 13rem;
+    border-radius: 20%;
+  }
+}
+
+@media screen and (max-width: 807px){
+  img {
+    height: 10rem;
+    border-radius: 20%;
+  }
+}
+
+@media screen and (max-width: 666px){
+  img {
+    height: 8rem;
+    border-radius: 20%;
+  }
+}
+
+@media screen and (max-width: 485px){
+  img {
+    height: 6rem;
+    border-radius: 20%;
+  }
+}
+
+@media screen and (max-width: 775px){
+  img {
+    height: 8rem;
+    border-radius: 20%;
+  }
+}
+
+@media screen and (max-width: 717px){
+  img {
+    height: 6rem;
+    border-radius: 20%;
+  }
+  .drinks-container {
+    padding: 90px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding-top: 20rem;
+  }
+}
+
+@media screen and (max-width: 659px){
+  img {
+    height: 5.9rem;
+    border-radius: 20%;
+  }
+}
+
+@media screen and (max-width: 603px){
+  img {
+    height: 5rem;
+    border-radius: 20%;
+  }
+}
+
+@media screen and (max-width: 630px){
+  img {
+    height: 5rem;
+    border-radius: 20%;
+  }
+  .drinks-container {
+    display: flex;
+    flex-direction: column;
+  }
 }

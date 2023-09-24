@@ -5,16 +5,16 @@ import { Link, useParams } from 'react-router-dom';
 import addFavorites from '../../images/add-to-favorites.png'
 import PropTypes from 'prop-types'
 
-const SingleDrink = ({ setSelectedDrink, selectedDrink, setFavorites, favorites }) => {
+const SingleDrink = ({ setSelectedDrink, selectedDrink, setFavorites, favorites, setError }) => {
   const [loaded, setLoaded] = useState(false);
   const {drinkId} = useParams()
 
   const addFavoriteDrinks = (newFavorite) => {
-    const isDuplicate = favorites.find((favorite) => favorite.id === newFavorite.id);
+    const isDuplicate = favorites.find((favorite) => favorite.idDrink === newFavorite.idDrink);
 
     if (!isDuplicate) {
       setFavorites([...favorites, newFavorite]);
-    }
+      }
   }
 
   useEffect(() => {
@@ -24,10 +24,10 @@ const SingleDrink = ({ setSelectedDrink, selectedDrink, setFavorites, favorites 
         if (data.drinks && data.drinks.length > 0) {
           setSelectedDrink(data.drinks[0]);
           setLoaded(true);
-        } else {
+          } else {
         }
       } catch (error) {
-        console.log(error);
+        setError(`Request failed - ${error.message}`)
       }
     };
   

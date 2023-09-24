@@ -1,6 +1,4 @@
 .search {
-  border: 1px solid #c4c4c4;
-  width: 30rem;
   overflow-x: hidden;
   display: flex;
   border-radius: 50px;
@@ -30,6 +28,8 @@
   background-color: #c54427;
   color: #ffffff;
   font-size: 18px;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 p {
@@ -43,3 +43,99 @@ p {
   font-size: 2rem;
   border-radius: 20%;
 }
+
+
+@media screen and (max-width: 630px){
+  .search {
+    /* border: 1px solid #c4c4c4; */
+    width: 20rem;
+    overflow-x: hidden;
+    display: flex;
+    border-radius: 50px;
+    font-size: 18px;
+    position: relative;
+    left:35%;
+    top:200px;
+    margin-left: -15rem;
+    /* justify-content: center; */
+  }
+
+  .search-btn {
+    height: 3rem;
+    margin-top: 0.7rem;
+    margin-left: .3rem;
+    font-size: 1rem;
+    border-radius: 20%;
+  }
+}
+
+@media screen and (max-width: 775px){
+  .search {
+    /* border: 1px solid #c4c4c4; */
+    width: 20rem;
+    overflow-x: hidden;
+    display: flex;
+    border-radius: 50px;
+    font-size: 18px;
+    position: relative;
+    left:35%;
+    top:200px;
+    /* justify-content: center; */
+  }
+
+  .search-btn {
+    height: 3rem;
+    margin-top: 0.7rem;
+    margin-left: .3rem;
+    font-size: 1rem;
+    border-radius: 20%;
+  }
+
+  .button-src{
+    padding: 1rem; 
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    margin: 9px 7px;
+    background-color: #c54427;
+    color: #ffffff;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 890px){
+  .search {
+    /* border: 1px solid #c4c4c4; */
+    width: 20rem;
+    overflow-x: hidden;
+    display: flex;
+    border-radius: 50px;
+    font-size: 18px;
+    position: relative;
+    left:35%;
+    top:200px;
+    /* justify-content: center; */
+  }
+
+  .search-btn {
+    height: 3rem;
+    margin-top: 0.7rem;
+    margin-left: .3rem;
+    font-size: 1rem;
+    border-radius: 20%;
+  }
+
+  .button-src{
+    padding: 1rem; 
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    margin: 9px 7px;
+    background-color: #c54427;
+    color: #ffffff;
+    font-size: 18px;
+  }
+}
+

@@ -1,0 +1,11 @@
+.home-view {
+width: 100vh;
+}
+
+@media screen and (max-width: 900px) {
+  .home-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}

@@ -6,7 +6,7 @@ h1 {
 
 hr {
   border: 1px solid white;
-  width: 90rem;
+  width: 70rem;
 }
 
 .title {
@@ -15,11 +15,90 @@ hr {
 
 
 .cocktail-img {
-height: 10rem;
+height: 12rem;
 }
 
 header {
   display: flex;
   padding-top: 1rem;
   padding-left: .5rem;
+}
+
+@media screen and (max-width: 630px) {
+  h1 {
+    color: white;
+  }
+  
+    hr {
+      border: 1px solid white;
+      width: 20rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    color: white;
+  }
+  
+  .cocktail-img {
+    height: 15rem;
+    }
+    
+    hr {
+      border: 1px solid white;
+      width: 20rem;
+    }
+}
+
+@media screen and (max-width: 1190px) {
+    hr {
+      border: 1px solid white;
+      width: 60rem;
+    }
+}
+
+@media screen and (max-width: 1113px) {
+  hr {
+    border: 1px solid white;
+    width: 50rem;
+  }
+}
+
+@media screen and (max-width: 956px) {
+  hr {
+    border: 1px solid white;
+    width: 41rem;
+  }
+}
+
+@media screen and (max-width: 824px) {
+  hr {
+    border: 1px solid white;
+    width: 35rem;
+  }
+}
+
+@media screen and (max-width: 780px) {
+    .cocktail-img {
+      height: 15rem;
+    }
+    hr {
+      border: 1px solid white;
+      width: 30rem;
+    }
+}
+
+@media screen and (max-width: 545px) { 
+  hr {
+    border: 1px solid white;
+    width: 35rem;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  .cocktail-img {
+    display: none;
+  }
 }

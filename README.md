@@ -12,7 +12,7 @@ Introducing Cocktail Maestra where you can choose a type of alcohol that will ge
 
 ```bash
 # Clone this repo to your local machine by running:
-[git clonehttps://github.com/aliceabarca/cocktail-maestra]
+git clonehttps://github.com/aliceabarca/cocktail-maestra
 
 # Cd into the root directory 
 cd cocktail-maestra
@@ -37,6 +37,7 @@ Deployed [REPO](https://cocktail-maestra.vercel.app/)
   | Description | Screenshot |
   |------------ | -----------|
   | <h3 align="center">APP | ![giphy](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHp5eWhtdTZrcjgydmYwbTBmazNpbHF6OXg4Ynhqc2ZqMXF3eDh6dCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A8XM0OwN8R33FfBE8j/giphy.gif)
+  | <h3 align="center">MOBILE VIEW | <img width="509" alt="Screenshot 2023-09-23 at 11 23 28 PM" src="https://github.com/aliceabarca/cocktail-maestra/assets/123991375/f98af9b4-1cfe-438c-8b67-c892605c0715">
 
 
   

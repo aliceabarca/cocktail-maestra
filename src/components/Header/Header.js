@@ -12,7 +12,7 @@ const Header = () => {
       <div className='title'>
         <h1>COCKTAIL MAESTRA</h1>
         <NavLink to={`/`}>
-          <button className='casa-button'>HOME</button>
+          <button className='home-button'>HOME</button>
         </NavLink>
         <NavLink to={`/favorites`}>
           <button className='saved-drinks'>SAVED DRINKS</button>

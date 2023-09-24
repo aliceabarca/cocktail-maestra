@@ -37,41 +37,43 @@ const SingleDrink = ({ setSelectedDrink, selectedDrink, setFavorites, favorites,
       return loaded && (
         <div className='drink-conatiner'>
           <div>
-          {selectedDrink.strDrink}
-          {selectedDrink.strGlass}
-          {selectedDrink.strInstructions}
-          {selectedDrink.strInstructionsES}
-          {selectedDrink.strDrinkThumb}
-          {selectedDrink.strIngredient1}
-          {selectedDrink.strIngredient2}
-          {selectedDrink.strIngredient3}
-          {selectedDrink.strIngredient4}
-          {selectedDrink.strIngredient5}
-          {selectedDrink.strIngredient6}
-          {selectedDrink.strIngredient7}
-          {selectedDrink.strIngredient8}
-          {selectedDrink.strIngredient9}
-          {selectedDrink.strIngredient10}
-          {selectedDrink.strIngredient11}
-          {selectedDrink.strIngredient12}
-          {selectedDrink.strIngredient13}
-          {selectedDrink.strIngredient14}
-          {selectedDrink.strIngredient15}
+          <p className='drink-name'>{selectedDrink.strDrink}</p>
+          <p className='stir-glass-type'>{selectedDrink.strGlass}</p>
+          <p className='english-instructions-section'>English Instructions: {selectedDrink.strInstructions}</p>
+          <p className='spanish-instructions-section'>Spanish Instructions / Instrucciones en Español: {selectedDrink.strInstructionsES}</p>
+          <p className='ingredients-section'> Ingredients: {selectedDrink.strIngredient1}
           {selectedDrink.strMeasure1}
+          {selectedDrink.strIngredient2}
           {selectedDrink.strMeasure2}
+          {selectedDrink.strIngredient3}
           {selectedDrink.strMeasure3}
+          {selectedDrink.strIngredient4}
           {selectedDrink.strMeasure4}
+          {selectedDrink.strIngredient5}
           {selectedDrink.strMeasure5}
+          {selectedDrink.strIngredient6}
           {selectedDrink.strMeasure6}
+          {selectedDrink.strIngredient7}
           {selectedDrink.strMeasure7}
+          {selectedDrink.strIngredient8}
           {selectedDrink.strMeasure8}
+          {selectedDrink.strIngredient9}
           {selectedDrink.strMeasure9}
+          {selectedDrink.strIngredient10}
           {selectedDrink.strMeasure10}
+          {selectedDrink.strIngredient11}
           {selectedDrink.strMeasure11}
+          {selectedDrink.strIngredient12}
           {selectedDrink.strMeasure12}
+          {selectedDrink.strIngredient13}
           {selectedDrink.strMeasure13}
+          {selectedDrink.strIngredient14}
           {selectedDrink.strMeasure14}
+          {selectedDrink.strIngredient15}
           {selectedDrink.strMeasure15}
+          </p>
+          <img className='selected-drink-image' alt={selectedDrink.strDrink} src={selectedDrink.strDrinkThumb}></img>
+          <p className='save-text'>SAVE?</p>
         </div>
         <Link to={`/favorites`}>
           <img className='favorite-button' alt='favorite button' src={addFavorites} onClick={() => addFavoriteDrinks(selectedDrink)}></img>

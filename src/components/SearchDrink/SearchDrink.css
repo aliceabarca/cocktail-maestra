@@ -47,7 +47,6 @@ p {
 
 @media screen and (max-width: 630px){
   .search {
-    /* border: 1px solid #c4c4c4; */
     width: 20rem;
     overflow-x: hidden;
     display: flex;
@@ -57,7 +56,6 @@ p {
     left:35%;
     top:200px;
     margin-left: -15rem;
-    /* justify-content: center; */
   }
 
   .search-btn {
@@ -71,7 +69,6 @@ p {
 
 @media screen and (max-width: 775px){
   .search {
-    /* border: 1px solid #c4c4c4; */
     width: 20rem;
     overflow-x: hidden;
     display: flex;
@@ -80,7 +77,6 @@ p {
     position: relative;
     left:35%;
     top:200px;
-    /* justify-content: center; */
   }
 
   .search-btn {
@@ -106,7 +102,6 @@ p {
 
 @media screen and (max-width: 890px){
   .search {
-    /* border: 1px solid #c4c4c4; */
     width: 20rem;
     overflow-x: hidden;
     display: flex;
@@ -115,7 +110,6 @@ p {
     position: relative;
     left:35%;
     top:200px;
-    /* justify-content: center; */
   }
 
   .search-btn {
